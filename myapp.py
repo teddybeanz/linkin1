@@ -40,7 +40,7 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = processRequest(req)
+    res = processingRequest(req)
 
     res = json.dumps(res, indent=4)
     # print(res)
@@ -48,21 +48,6 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-
-def processRequest(req):
-
-    if req.get("result").get("action") != "linking1":
-        return {}
-    baseurl = "https://google.com/"
-    yql_query = makeYqlQuery(req)
-    if yql_query is None:
-        return {}
-    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
-	 
-    res = makeWebhookResult(data)
-    return res
 
 def processingRequest(req):
     if req.get("result").get("action") != "linking1":
@@ -78,14 +63,14 @@ def processingRequest(req):
     return res
 	
 
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("date")
-    if city is None:
-        return None
+#def makeYqlQuery(req):
+ #   result = req.get("result")
+  #  parameters = result.get("parameters")
+   # city = parameters.get("date")
+    #if city is None:
+     #   return None
 
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+    #return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data):
