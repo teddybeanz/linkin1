@@ -79,7 +79,7 @@ def makeWebhookResult(data):
  #   thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
  #   thedestinationTo = req.get("result").get("parameters").get("destinationTo")
 
-    speech = "Hey no problem okay I'll look for flights on" + third 
+    speech = "Hey no problem okay I'll look for flights on " + third 
 
     print("Response:")
     print(speech)
