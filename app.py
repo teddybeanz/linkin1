@@ -64,7 +64,7 @@ def makeWebhookResult(data):
 
     new = 2
     tabURL = "http://google.com/?#q="
-    webbrowser.open(tabURL + row,new=new)
+    webbrowser.open(tabURL ,new=new)
 
     speech = "Hey no problem okay I'll look for flights on" + thedate 
 
