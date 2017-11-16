@@ -48,7 +48,7 @@ def processingRequest(req):
     
     new = 2
     tabURL = "http://google.com/?#q="
-    webbrowser.open(tabURL + row,new=new)
+    webbrowser.open(tabURL ,new=new)
 
 
     data = json.loads(result)
