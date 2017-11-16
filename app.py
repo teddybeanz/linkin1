@@ -50,8 +50,7 @@ def processingRequest(req):
     new = 2
     tabURL = "http://google.com/?#q="
     webbrowser.open(tabURL + row,new=new)
-=======
->>>>>>> 04d6b61e3b46c9366080196eb6eb84c1d4c056a9
+
 
     data = json.loads(result)
     res=makeWebhookResult(data)
@@ -64,13 +63,10 @@ def makeWebhookResult(data):
     webbrowser.open('http://google.com')
     thedate = data['result']['parameters']['date']
 
-<<<<<<< HEAD
     new = 2
     tabURL = "http://google.com/?#q="
     webbrowser.open(tabURL + row,new=new)
-=======
->>>>>>> 04d6b61e3b46c9366080196eb6eb84c1d4c056a9
-	
+
     speech = "Hey no problem okay I'll look for flights on" + thedate 
 
     print("Response:")
