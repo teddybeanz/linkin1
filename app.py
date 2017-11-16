@@ -45,7 +45,6 @@ def processingRequest(req):
     if req.get("result").get("action") != "linking1":
         return{}
     webbrowser.open('http://google.com')
-<<<<<<< HEAD
     
     new = 2
     tabURL = "http://google.com/?#q="
