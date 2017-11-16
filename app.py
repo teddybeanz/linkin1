@@ -40,6 +40,10 @@ def processingRequest(req):
     if req.get("result").get("action") != "linking1":
         return{}
     webbrowser.open('http://google.com')
+    
+    new = 2
+    tabURL = "http://google.com/?#q="
+    webbrowser.open(tabURL + row,new=new)
 
     data = json.loads(result)
     res=makeWebhookResult(data)
@@ -52,6 +56,9 @@ def makeWebhookResult(data):
     webbrowser.open('http://google.com')
     thedate = data['result']['parameters']['date']
 
+    new = 2
+    tabURL = "http://google.com/?#q="
+    webbrowser.open(tabURL + row,new=new)
 	
     speech = "Hey no problem okay I'll look for flights on" + thedate 
 
