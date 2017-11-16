@@ -62,9 +62,9 @@ def makeWebhookResult(data):
 
    thedate = data['result']['parameters']['date']
 
-    new = 2
-    tabURL = "http://google.com/?#q="
-    webbrowser.open(tabURL ,new=new)
+#    new = 2
+#    tabURL = "http://google.com/?#q="
+#    webbrowser.open(tabURL ,new=new)
  #   thedate = req.get("result").get("parameters").get("date")
  #   thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
  #   thedestinationTo = req.get("result").get("parameters").get("destinationTo")
