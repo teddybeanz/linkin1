@@ -60,9 +60,18 @@ def processingRequest(req):
 
 def makeWebhookResult(data):
 
-    webbrowser.open('http://google.com')
-    thedate = data['result']['parameters']['date']
-   
+ #   thedate = data['result']['parameters']['date']
+    one = data.get('results')
+	 if one is None:
+		return{}
+	
+    two = one.get('parameters')
+	 if two is None:
+		return{}
+    third = two.get('date')
+	 if third is None:
+		return{}
+	
     new = 2
     tabURL = "http://google.com/?#q="
     webbrowser.open(tabURL ,new=new)
@@ -70,7 +79,7 @@ def makeWebhookResult(data):
  #   thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
  #   thedestinationTo = req.get("result").get("parameters").get("destinationTo")
 
-    speech = "Hey no problem okay I'll look for flights on" + thedate 
+    speech = "Hey no problem okay I'll look for flights on" + third 
 
     print("Response:")
     print(speech)
