@@ -50,8 +50,8 @@ def processingRequest(req):
     tabURL = "http://google.com/?#q="
     webbrowser.open(tabURL, new=new)
 	
-    result = {'id': '609c2848-8bdc-40b8-9e7e-2baeaacda10f', 'timestamp': '2017-11-01T03:03:21.892Z', 'lang': 'en', 'result': {'source': 'agent', 'resolvedQuery': "i'd like to book a flight from singapore to tokyo this friday", 'action': '', 'actionIncomplete': False, 'parameters': {'date': '2017-11-03', 'destinationFrom': 'Singapore', 'destinationTo': 'Tokyo'}, 'contexts': [], 'metadata': {'intentId': '7dd793a3-e16f-45f0-867c-2e29be14d10d', 'webhookUsed': 'false', 'webhookForSlotFillingUsed': 'false', 'intentName': 'book.flight'}, 'fulfillment': {'speech': 'Hold on...Looking for flights available from Singapore to Tokyo on 2017-11-03', 'messages': [{'type': 0, 'speech': 'Give me a moment while I look for the flights available from Singapore to Tokyo on 2017-11-03'}]}, 'score': 0.9900000095367432}, 'status': {'code': 200, 'errorType': 'success'}, 'sessionId': 'aa2c9d04-9ba6-4f98-a8f0-a444547dce93'}
-    result_data = json.dumps(result)
+ #   result = {'id': '609c2848-8bdc-40b8-9e7e-2baeaacda10f', 'timestamp': '2017-11-01T03:03:21.892Z', 'lang': 'en', 'result': {'source': 'agent', 'resolvedQuery': "i'd like to book a flight from singapore to tokyo this friday", 'action': '', 'actionIncomplete': False, 'parameters': {'date': '2017-11-03', 'destinationFrom': 'Singapore', 'destinationTo': 'Tokyo'}, 'contexts': [], 'metadata': {'intentId': '7dd793a3-e16f-45f0-867c-2e29be14d10d', 'webhookUsed': 'false', 'webhookForSlotFillingUsed': 'false', 'intentName': 'book.flight'}, 'fulfillment': {'speech': 'Hold on...Looking for flights available from Singapore to Tokyo on 2017-11-03', 'messages': [{'type': 0, 'speech': 'Give me a moment while I look for the flights available from Singapore to Tokyo on 2017-11-03'}]}, 'score': 0.9900000095367432}, 'status': {'code': 200, 'errorType': 'success'}, 'sessionId': 'aa2c9d04-9ba6-4f98-a8f0-a444547dce93'}
+    result_data = json.dumps(req)
     data = json.loads(result_data)
     res=makeWebhookResult(data)
     return res
@@ -61,14 +61,14 @@ def processingRequest(req):
 def makeWebhookResult(data):
 
     webbrowser.open('http://google.com')
- #   thedate = data['result']['parameters']['date']
+    thedate = data['result']['parameters']['date']
    
     new = 2
     tabURL = "http://google.com/?#q="
     webbrowser.open(tabURL ,new=new)
-    thedate = req.get("result").get("parameters").get("date")
-    thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
-    thedestinationTo = req.get("result").get("parameters").get("destinationTo")
+ #   thedate = req.get("result").get("parameters").get("date")
+ #   thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
+ #   thedestinationTo = req.get("result").get("parameters").get("destinationTo")
 
     speech = "Hey no problem okay I'll look for flights on" + thedate 
 
