@@ -72,7 +72,7 @@ def makeWebhookResult(data):
  #   thedestinationFrom = req.get("result").get("parameters").get("destinationFrom")
  #   thedestinationTo = req.get("result").get("parameters").get("destinationTo")
 
-    speech = "No problem! I'll look for flights on " + thedate + "from " + thedestinationFrom + "to " + thedestinationTo + "."
+    speech = "No problem! I'll look for flights on " + thedate + " from " + thedestinationFrom + " to " + thedestinationTo + "."
  #   tabURL = "http://google.com"
  #   webbrowser.open(tabURL)
 
